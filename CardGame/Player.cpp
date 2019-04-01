@@ -1,5 +1,7 @@
 ﻿#include "Player.h"
 #include <cmath>
+#include <typeinfo>
+#include "CardShark.h"
 
 void Player::increment()
 {
@@ -36,11 +38,11 @@ void Player::operator++()
 	increment();
 }
 
-int Player::operator<(Player * player)
+int Player::operator<(Player *player)
 {
-	if (this->getCurrentScore() > player->getCurrentScore()) return 1;
-	else if (this->getCurrentScore() < player->getCurrentScore()) return 2;
-	else return 0;
+		if (this->getCurrentScore() > player->getCurrentScore()) return 1;
+		else if (this->getCurrentScore() < player->getCurrentScore()) return 2;
+		else return 0;
 }
 
 Player::Player()

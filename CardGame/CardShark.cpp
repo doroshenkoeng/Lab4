@@ -10,3 +10,10 @@ void CardShark::operator++()
 	}
 	Player::increment();
 }
+
+int CardShark::operator<(Looser  player)
+{
+	if (this->getCurrentScore() > player.getCurrentScore()) return 1;
+	else if (this->getCurrentScore() < player.getCurrentScore()) return 2;
+	else return 0;
+}

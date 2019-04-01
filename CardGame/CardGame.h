@@ -1,5 +1,8 @@
 ﻿#pragma once
 #include "Player.h"
+#include "CardShark.h"
+#include "Looser.h"
+
 //! Класс игры
 class CardGame
 {
@@ -10,7 +13,7 @@ public:
 		\param player1 объект класса Player - игрок 1.
 		\param player2 объект класса Player - игрок 2.
 	*/
-	CardGame(Player & player1, Player & player2);
+	CardGame(CardShark & player1, Looser & player2);
 	//! Метод, в котором симулируется игра.
 	void startGame();
 	//! Метод возвращающий результат игры.
@@ -24,9 +27,9 @@ private:
 	//! Количество карт в колоде.
 	int mCardsNumber;
 	//! Указатель на  объект класса Player.
-	Player *mPlayer1;
+	CardShark mPlayer1;
 	//! Указатель на  объект класса Player.
-	Player *mPlayer2;
+	Looser mPlayer2;
 
 };
 

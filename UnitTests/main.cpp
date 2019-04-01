@@ -31,8 +31,9 @@ TEST(CardShark, Increment) {
 
 //! Тест на диапазон значений результата игры.
 TEST(CardGame, GetResult) {
-	CardShark CardShark1, CardShark2;
-	CardGame game(CardShark1, CardShark2);
+	CardShark cardShark;
+	Looser looser;
+	CardGame game(cardShark, looser);
 	game.startGame();
 	ASSERT_LT(-1, game.getResult());
 	ASSERT_GT(3, game.getResult());
@@ -47,16 +48,17 @@ TEST(CardShark, OperatorIncrement) {
 
 //! Тест бинарного оператора сравнения.
 TEST(CardShark, OperatorLessThan) {
-	CardShark *CardShark1=new CardShark, *CardShark2=new CardShark;
-	++(*CardShark1);
-	ASSERT_EQ(1, CardShark2 < CardShark1);
+	CardShark cardShark;
+	Looser looser;
+	++cardShark;
+	ASSERT_EQ(1, cardShark < looser);
 }
 //! Тест оператора инкремент класса Looser.
 TEST(Looser, OperatorIncrement) {
-	Looser *looser = new Looser;
-	++(*looser);
-	ASSERT_LT(-1, looser->getCurrentScore());
-	ASSERT_GT(2, looser->getCurrentScore());
+	Looser looser;
+	++looser;
+	ASSERT_LT(-1, looser.getCurrentScore());
+	ASSERT_GT(2, looser.getCurrentScore());
 }
 
 int main(int argc, char ** argv)

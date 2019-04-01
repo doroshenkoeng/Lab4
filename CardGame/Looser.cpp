@@ -13,4 +13,3 @@ void Looser::operator++()
 	}
 
 }
-
